@@ -41,12 +41,12 @@ export default function Home() {
               Join a community of developers reading and discussing essential programming books together
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="/The-Technical-Book-Club/books">
+              <Link href="/books">
                 <div className="inline-block bg-black text-white px-8 py-3 rounded-full font-semibold border border-white/20 hover:bg-white hover:text-black transition-all duration-200 glow-button">
                   📖 Join the Club
                 </div>
               </Link>
-              <Link href="/The-Technical-Book-Club/books">
+              <Link href="/books">
                 <div className="inline-block bg-white/5 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-200">
                   View Book Roadmap
                 </div>
