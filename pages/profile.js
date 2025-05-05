@@ -1,5 +1,6 @@
 import { useSession } from 'next-auth/react';
 import Navbar from '../components/Navbar';
+import Image from 'next/image';
 
 export default function Profile() {
   const { data: session } = useSession();
@@ -26,10 +27,12 @@ export default function Profile() {
         <div className="flex items-center gap-6 mb-12">
           <div className="w-24 h-24 rounded-full bg-white/10">
             {session?.user?.image && (
-              <img 
+              <Image 
                 src={session.user.image} 
-                alt="Profile" 
-                className="w-full h-full rounded-full"
+                alt="Profile"
+                width={96}
+                height={96}
+                className="rounded-full"
               />
             )}
           </div>
