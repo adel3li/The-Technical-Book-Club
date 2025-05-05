@@ -3,15 +3,15 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Navbar() {
-  const router = useRouter();
-  const current = router.pathname;
-
   const links = [
     { label: "Home", href: "/" },
     { label: "Books", href: "/books" },
     { label: "Groups", href: "/groups" },
     { label: "Resources", href: "/resources" }
   ];
+
+  const router = useRouter();
+  const current = router.pathname;
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-black z-50 border-b border-white/10 h-16">
