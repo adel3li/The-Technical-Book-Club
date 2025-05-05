@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="relative max-w-6xl mx-auto h-full flex items-center px-4">
         {/* Left: Logo */}
         <div className="flex items-center gap-2 text-white font-bold text-xl">
-          <span>PS</span>
+          <span>TTBC</span>
           <span className="text-xs px-2 py-0.5 bg-white/10 text-white/60 rounded-full">v2.1.13</span>
         </div>
 

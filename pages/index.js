@@ -29,36 +29,6 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Ahmed M.",
-      role: "Software Engineer",
-      text: "The discussions helped me understand complex concepts through real-world experiences.",
-      avatar: "/avatars/ahmed.jpg"
-    },
-    {
-      name: "Sara K.",
-      role: "Frontend Developer",
-      text: "Great community! The weekly sessions keep me accountable and learning consistently.",
-      avatar: "/avatars/sara.jpg"
-    }
-  ];
-
-  const upcomingEvents = [
-    {
-      date: "Mar 15, 2024",
-      title: "System Design Workshop",
-      description: "Practical implementation of concepts from DDIA Chapter 5",
-      type: "Workshop"
-    },
-    {
-      date: "Mar 22, 2024",
-      title: "Guest Speaker: Database Internals",
-      description: "Deep dive into database architecture with senior DB engineer",
-      type: "Special Session"
-    }
-  ];
-
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
@@ -66,7 +36,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-float">Programming Study Club</h1>
+            <h1 className="text-5xl font-bold mb-6 animate-float">The Technicala Book Club</h1>
             <p className="text-xl text-white/60 mb-8">
               Join a community of developers reading and discussing essential programming books together
             </p>
@@ -163,63 +133,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Upcoming Events */}
-        <section className="py-16 px-4 animate-fade-in" style={{ animationDelay: '1s' }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">📅 Upcoming Events</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {upcomingEvents.map((event, idx) => (
-                <div key={idx} className="bg-white/5 rounded-lg p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                  <div className="text-sm text-white/60 mb-2">{event.date}</div>
-                  <div className="inline-block px-2 py-1 bg-white/10 rounded-full text-xs mb-3">
-                    {event.type}
-                  </div>
-                  <h3 className="font-semibold text-xl mb-2">{event.title}</h3>
-                  <p className="text-white/60">{event.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Member Testimonials */}
-        <section className="py-16 px-4 bg-white/5 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">💬 Member Experiences</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial, idx) => (
-                <div key={idx} className="bg-black/50 rounded-lg p-6 border border-white/10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-white/10 overflow-hidden">
-                      {/* Avatar image here */}
-                    </div>
-                    <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-white/60">{testimonial.role}</div>
-                    </div>
-                  </div>
-                  <p className="text-white/80 italic">"{testimonial.text}"</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="py-20 px-4 animate-fade-in" style={{ animationDelay: '1.4s' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Join Our Community?</h2>
-            <p className="text-white/60 mb-8 max-w-2xl mx-auto">
-              Start your journey of continuous learning with fellow developers who are passionate about growing together.
-            </p>
-            <Link href="/books">
-              <div className="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all duration-200">
-                Get Started Today →
-              </div>
-            </Link>
           </div>
         </section>
       </main>

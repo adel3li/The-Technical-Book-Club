@@ -4,7 +4,7 @@ import { GroupCard } from '../components/GroupCard';
 
 export default function Groups() {
   const mainCommunity = {
-    title: "Programming Study Club Community",
+    title: "The Technical Book Club Community",
     description: "Our main community where we share announcements, resources, and engage in general discussions about software engineering and learning.",
     members: 124,
     platform: "Discord",
