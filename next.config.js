@@ -4,8 +4,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/bookclub-website',
-  assetPrefix: '/bookclub-website/',
+  basePath: '/The-Technical-Book-Club',
+  assetPrefix: '/The-Technical-Book-Club/',
+  distDir: 'dist',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

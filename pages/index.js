@@ -36,17 +36,17 @@ export default function Home() {
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-float">The Technicala Book Club</h1>
+            <h1 className="text-5xl font-bold mb-6 animate-float">The Technical Book Club</h1>
             <p className="text-xl text-white/60 mb-8">
               Join a community of developers reading and discussing essential programming books together
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="/books">
+              <Link href="/The-Technical-Book-Club/books">
                 <div className="inline-block bg-black text-white px-8 py-3 rounded-full font-semibold border border-white/20 hover:bg-white hover:text-black transition-all duration-200 glow-button">
                   📖 Join the Club
                 </div>
               </Link>
-              <Link href="/books">
+              <Link href="/The-Technical-Book-Club/books">
                 <div className="inline-block bg-white/5 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-200">
                   View Book Roadmap
                 </div>
