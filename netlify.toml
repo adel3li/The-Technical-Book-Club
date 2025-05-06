@@ -1,17 +1,15 @@
 [build]
-    publish = "public"
-    command = "npm run build"
+  command = "npm run build"
+  publish = "out"
 
-[[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
-    NODE_VERSION = "16"
+  NEXT_USE_SSR = "false"
+  NODE_VERSION = "16"
 
-# Enable CORS headers
-[[headers]]
-    for = "/*"
-        [headers.values]
-        Access-Control-Allow-Origin = "*"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
