@@ -3,9 +3,22 @@ import Navbar from '../components/Navbar';
 
 export default function Books() {
   const books = [
-    { title: "The Pragmatic Programmer", sessions: 20, status: "Finished" },
-    { title: "Alice and Bob Learn Application Security", sessions: 16, status: "Finished" },
-    { title: "Designing Data-Intensive Applications", sessions: null, status: "Currently Reading" }
+    { 
+      title: "The Pragmatic Programmer", 
+      sessions: 14, 
+      status: "Finished",
+      specialSessions: 1
+    },
+    { 
+      title: "The Art of Clean Code", 
+      sessions: 5, 
+      status: "Finished"
+    },
+    { 
+      title: "Alice and Bob Learn Application Security", 
+      sessions: 14, 
+      status: "Currently Reading" 
+    }
   ];
 
   return (
@@ -27,7 +40,9 @@ export default function Books() {
               {/* Left side */}
               <div className={`flex-1 ${idx % 2 === 0 ? 'text-right pr-12' : 'pl-12'}`}>
                 {idx % 2 === 0 ? (
-                  <h3 className="text-2xl font-semibold mb-3 hover:text-white/90 transition-colors">
+                  <h3 className={`text-2xl font-semibold mb-3 hover:text-white/90 transition-colors ${
+                    idx === 1 ? 'text-center -mr-12 pr-0' : ''
+                  }`}>
                     {book.title}
                   </h3>
                 ) : (
@@ -35,7 +50,12 @@ export default function Books() {
                     <div className="text-xl text-white/80 mb-2">{book.status}</div>
                     {book.sessions && (
                       <div className="text-white/60">
-                        {book.sessions} study sessions
+                        {book.sessions}  sessions
+                        {book.specialSessions && (
+                          <span className="text-white/40 ml-2">
+                            (+{book.specialSessions} special session)
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>
@@ -55,7 +75,12 @@ export default function Books() {
                     <div className="text-xl text-white/80 mb-2">{book.status}</div>
                     {book.sessions && (
                       <div className="text-white/60">
-                        {book.sessions} study sessions
+                        {book.sessions}  sessions
+                        {book.specialSessions && (
+                          <span className="text-white/40 ml-2">
+                            (+{book.specialSessions} special session)
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>

@@ -6,7 +6,7 @@ export default function Navbar() {
   const links = [
     { label: "Home", href: "/" },
     { label: "Books", href: "/books" },
-    { label: "Groups", href: "/groups" },
+    { label: "Community", href: "/groups" },  // Updated label
     { label: "Resources", href: "/resources" }
   ];
 

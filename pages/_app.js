@@ -24,12 +24,12 @@ export default function App({ Component, pageProps }) {
         <p>
           Built by{" "}
           <a
-            href="https://github.com/AdelAli"
+            href="https://github.com/adel3li"
             className="hover:text-white/60 transition-colors"
           >
-            @AdelAli
+            @adel3li
           </a>{" "}
-          • GitHub Stars ⭐️ 0
+          {/* • GitHub Stars ⭐️ 0 */}
         </p>
       </footer>
     </>
