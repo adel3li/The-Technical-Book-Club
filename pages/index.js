@@ -53,6 +53,34 @@ export default function Home() {
     }
   ];
 
+  const testimonials = [
+    {
+      name: "Abuobaida Abdi",
+      role: "Software Engineer",
+      text: "كانت تجربة ممتعة ومفيدة جدًا! كتاب 𝙏𝙝𝙚 𝙋𝙧𝙖𝙜𝙢𝙖𝙩𝙞𝙘 𝙋𝙧𝙤𝙜𝙧𝙖𝙢𝙢𝙚𝙧 مليء بالأفكار العميقة عن حرفة صناعة البرمجيات، والنقاشات مع الشباب كانت مثرية. الأجمل أن التجربة (نادي القراءة) كانت مشجعة ومحفزة لنا على الاستمرار في القراءة. شكر خاص لك حج عادل على إدارتك الرائعة للجلسات. 🌹📚"
+    },
+    {
+      name: "Mohamed Allam",
+      role: "Android Developer",
+      text: "Thanks to my amazing book club members for making this journey great. Special thanks to Adel Ali for his efforts and contributions 😍"
+    },
+    {
+      name: "Adel Mahmoud",
+      role: "Software Engineering Student",
+      text: "It was really a great experience, for me the best part was how everyone was interpreting a thought mentioned in the book based on his/her background/experiences, which really helped broadening the perspective of all of us. And ofc the fun we had along the way 🤣\n\nLooking forward to see you all in the next book."
+    },
+    {
+      name: "Rayhan Shhadeh",
+      role: "Computer Engineering Student",
+      text: "The only thing I know is that you won't get rid of me in this club. It's wonderful getting to know you, Adel, and learning from your experiences as well as those of the other members is even more valuable. I gained valuable insights from this book and I'm ready for our next one! 🌿 🤍"
+    },
+    {
+      name: "Duaa Braik",
+      role: "Software Engineer",
+      text: "It was really nice knowing and learning from each one of you 🤩"
+    }
+  ];
+
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
@@ -114,6 +142,29 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-16 px-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8 text-center">What Our Members Say 💝</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {testimonials.map((testimonial, idx) => (
+                <div 
+                  key={idx}
+                  className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300"
+                >
+                  <p className="text-white/80 mb-4 text-sm">
+                    {testimonial.text}
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="text-white/60 text-sm">{testimonial.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
