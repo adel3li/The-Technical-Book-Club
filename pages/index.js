@@ -196,7 +196,7 @@ export default function Home() {
         <section className="py-24 px-4 animate-fade-in bg-gradient-to-b from-transparent to-white/5" style={{ animationDelay: '1s' }}>
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="text-2xl font-light italic text-white/80">
-              "The more that you read, the more things you will know. The more that you learn, the more places you'll go."
+              &ldquo;The more that you read, the more things you will know. The more that you learn, the more places you&apos;ll go.&rdquo;
             </blockquote>
             <p className="mt-4 text-white/60">― Dr. Seuss</p>
           </div>
