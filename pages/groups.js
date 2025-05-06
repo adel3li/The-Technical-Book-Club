@@ -18,7 +18,7 @@ export default function Groups() {
       description: "Currently reading and discussing Application Security concepts",
       members: "+55",  // Added + prefix
       platform: "WhatsApp",
-      link: "https://chat.whatsapp.com/DbSVlunS6ucLmt6LuXE5Ce",
+      link: "https://chat.whatsapp.com/DIvv9XUSZ6QBYiRMPmLa49",
       status: "Active",
       progress: "70%",
       icon: "📚"

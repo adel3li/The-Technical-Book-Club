@@ -238,7 +238,7 @@ export default function Home() {
                     {currentBook.progress} complete
                   </div>
                 </div>
-                <Link href="https://chat.whatsapp.com/DbSVlunS6ucLmt6LuXE5Ce">
+                <Link href="https://chat.whatsapp.com/DIvv9XUSZ6QBYiRMPmLa49">
                   <div className="px-6 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-200">
                     Join Current Sessions →
                   </div>
