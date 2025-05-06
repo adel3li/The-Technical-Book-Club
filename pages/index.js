@@ -24,7 +24,7 @@ export default function Home() {
       guest: "Mohamed Elsherif",
       role: "Software Architect at Apple",
       book: "The Pragmatic Programmer",
-      description: "An interactive session discussing practical software design principles and real-world applications of concepts from The Pragmatic Programmer.",
+      description: "An interactive session discussing practical principles and real-world applications of concepts from The Pragmatic Programmer.",
       photoUrl: "/image/mohamed.png",
       recordingUrl: "https://drive.google.com/file/d/1PjOdmeKh8cot12PxVUWSJnmgfX38Q6Ij/view?usp=share_link"
     }
