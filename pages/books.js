@@ -14,7 +14,7 @@ export default function Books() {
       <main className="pt-32 flex flex-col items-center px-4 pb-20">
         <h1 className="text-5xl font-bold mb-4 flex items-center animate-fade-in">📚 Our Book Club Journey</h1>
         <p className="text-xl text-white/60 mb-24 text-center max-w-2xl animate-fade-in">
-          Explore books we've read, are reading, and plan to read.
+          Explore books we&apos;ve read, are reading, and plan to read.
         </p>
 
         <div className="relative max-w-5xl w-full">
