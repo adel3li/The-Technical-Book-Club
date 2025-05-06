@@ -78,6 +78,11 @@ export default function Home() {
       name: "Duaa Braik",
       role: "Software Engineer",
       text: "It was really nice knowing and learning from each one of you 🤩"
+    },
+    {
+      name: "Hend Mohammed",
+      role: "Mobile App Enthusiast",
+      text: "Thank a lot for the excellent session! the discussion was truly engaging. It was both motivating and inspiring. A special thanks a lot to our guest for sharing valuable insights, knowledge, and practical tips that will help us continue to grow and work towards achieving our goals Insha'Allah."
     }
   ];
 
