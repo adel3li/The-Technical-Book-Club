@@ -12,7 +12,7 @@ export default function Home() {
   ];
 
   const currentBook = {
-    title: "Automate the Boring Stuff with Python",
+    title: "Automate the Boring Stuff with Python.",
     description: "Practical programming for total beginners",
     progress: "10%",
     author: "Al Sweigart",
