@@ -12,12 +12,11 @@ export default function Home() {
   ];
 
   const currentBook = {
-    title: "Alice and Bob Learn Application Security",
-    description: "A hands-on guide to application security concepts",
-    progress: "70%",
-    author: "Tanya Janca",
-    coverImage: "/image/image-AliceandBob.png"  // Updated path to match the actual file location
-  };
+    title: "Automate the Boring Stuff with Python",
+    description: "Practical programming for total beginners",
+    progress: "10%",
+    author: "Al Sweigart",
+    coverImage: "/image/automate-python.png"  // Make sure to add this image to your public/image directory
 
   const specialSessions = [
     {
