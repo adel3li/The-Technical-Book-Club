@@ -18,6 +18,11 @@ export default function Books() {
       title: "Alice and Bob Learn Application Security", 
       sessions: 14, 
       status: "Currently Reading" 
+    },
+    { 
+      title: "Automate The Boring Stuff with Python.", 
+      sessions: 10, 
+      status: "Currently Reading" 
     }
   ];
 
