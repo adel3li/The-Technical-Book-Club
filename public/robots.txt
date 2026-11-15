@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://the-technical-book-club.vercel.app/sitemap.xml
