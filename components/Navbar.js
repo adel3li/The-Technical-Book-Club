@@ -14,6 +14,7 @@ export default function Navbar() {
 
   const router = useRouter();
   const current = router.pathname;
+  const isActive = (href) => (href === '/' ? current === '/' : current === href || current.startsWith(`${href}/`));
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-black z-50 border-b border-white/10 h-16">
@@ -41,7 +42,7 @@ export default function Navbar() {
             <Link key={link.href} href={link.href} className="inline-block">
               <div
                 className={`px-4 py-1 text-sm rounded-full cursor-pointer transition-all duration-200
-                  ${current === link.href
+                  ${isActive(link.href)
                     ? "bg-white text-black shadow"
                     : "text-white/80 hover:bg-white/10"}
                 `}
@@ -67,7 +68,7 @@ export default function Navbar() {
               >
                 <div
                   className={`px-4 py-3 text-sm rounded-lg transition-all duration-200
-                    ${current === link.href
+                    ${isActive(link.href)
                       ? "bg-white text-black"
                       : "text-white/80 hover:bg-white/10"}
                   `}

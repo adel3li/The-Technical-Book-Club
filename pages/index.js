@@ -1,6 +1,8 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
-import Counter from '../components/Counter';
+import Counter from '@/components/Counter';
+import BookCover from '@/components/BookCover';
+import NextSession from '@/components/NextSession';
 import { benefits, links, currentSessionsLink, quote, specialSessions, testimonials } from '@/data/club';
 import { currentBook, getBook, homeStats as stats } from '@/lib/club';
 
@@ -30,6 +32,8 @@ export default function Home() {
           </div>
         </section>
 
+        <NextSession />
+
         {/* Special Sessions */}
         <section className="py-16 px-4 bg-white/5 animate-fade-in mb-24" style={{ animationDelay: '0.4s' }}>
           <div className="max-w-4xl mx-auto">
@@ -40,8 +44,8 @@ export default function Home() {
                   <div className="w-24 h-24 shrink-0 rounded-full bg-white/10 overflow-hidden">
                     <img 
                       src={session.photoUrl} 
-                      alt={session.guest}
-                    loading="lazy"
+                        alt={session.guest}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -49,7 +53,10 @@ export default function Home() {
                     <h3 className="font-semibold text-xl mb-1">{session.guest}</h3>
                     <div className="text-white/60 mb-3">{session.role}</div>
                     <p className="text-white/80 mb-2">
-                      Book Discussion: <span className="text-white">{getBook(session.book).title}</span>
+                      Book Discussion:{' '}
+                      <Link href={`/books/${session.book}`} className="text-white hover:underline underline-offset-4">
+                        {getBook(session.book).title}
+                      </Link>
                     </p>
                     <p className="text-white/60 mb-4">{session.description}</p>
                     <a
@@ -135,25 +142,13 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-8 text-center">📚 Currently Reading</h2>
             <div className="bg-white/5 rounded-lg p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-48 h-64 overflow-hidden rounded-lg border border-white/10 shrink-0">
-                  {currentBook.cover ? (
-                    <img
-                      src={currentBook.cover}
-                      alt={currentBook.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex flex-col justify-between p-4 bg-gradient-to-br from-white/15 to-white/5">
-                      <span className="text-3xl">📘</span>
-                      <div>
-                        <div className="font-semibold leading-tight">{currentBook.title}</div>
-                        <div className="text-xs text-white/60 mt-2">{currentBook.author}</div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <BookCover book={currentBook} />
                 <div className="flex-1">
-                  <h3 className="font-semibold text-2xl mb-2">{currentBook.title}</h3>
+                  <h3 className="font-semibold text-2xl mb-2">
+                    <Link href={`/books/${currentBook.slug}`} className="hover:underline underline-offset-4">
+                      {currentBook.title}
+                    </Link>
+                  </h3>
                   <p className="text-white/60 mb-2">by {currentBook.author}</p>
                   <p className="text-white/60 mb-4">{currentBook.description}</p>
                   <div className="w-full bg-white/10 rounded-full h-2 mb-2">
