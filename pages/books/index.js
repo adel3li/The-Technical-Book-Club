@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { books } from '@/data/club';
 import { STATUS_LABELS, specialSessionCount } from '@/lib/club';
@@ -30,7 +31,9 @@ function BookDetails({ book, align }) {
 function BookTitle({ book, align }) {
   return (
     <h2 className={`text-xl md:text-2xl font-semibold ${align === 'right' ? 'md:text-right' : ''}`}>
-      {book.title}
+      <Link href={`/books/${book.slug}`} className="hover:underline underline-offset-4 decoration-white/40">
+        {book.title}
+      </Link>
     </h2>
   );
 }

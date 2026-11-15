@@ -31,10 +31,11 @@ npm run build   # static export to ./out
 ### Project layout
 
 ```
-pages/           one file per route (index, books, groups, resources)
+pages/           one file per route (index, books, books/[slug], groups, resources)
 components/      shared UI (Navbar, Counter, GroupCard)
 data/club.js     all site content
 lib/club.js      values calculated from the content
+scripts/         build-time helpers (sitemap)
 styles/          global CSS and Tailwind setup
 public/image/    photos and book covers
 ```
@@ -55,6 +56,15 @@ Common edits:
 - **Update reading progress**: change the book's `progress` (0–100).
 - **Start a new book**: add it to `books` with `status: "reading"`, set `currentBookSlug` to its `slug`, and mark the previous book `"finished"`.
 - **Add a book cover**: put the image in `public/image/` and set the book's `cover` to its path, e.g. `"/image/automate-python.png"`.
+- **Announce the next session**: set `nextSession` (start time, book, optional topic and meeting link). The home page then shows a "Next session" card with **Add to Google Calendar** and **.ics** buttons, in each visitor's own time zone. It hides itself once the session starts. Set it back to `null` when nothing is scheduled.
+
+Every book gets its own page at `/books/<slug>`, showing progress, its study group, slides and guest sessions with recordings.
+
+## Link previews and search
+
+- Every page has a title, description and Open Graph/X tags, so links shared on WhatsApp, LinkedIn or X show a proper preview. Book pages use the book's cover; other pages use `public/og.png`.
+- `public/sitemap.xml` is generated from `data/club.js` before every build (`scripts/generate-sitemap.mjs`), and `public/robots.txt` points to it.
+- The site's public URL is `site.url` in `data/club.js`. Change it there if you add a custom domain.
 
 ## Deployment
 

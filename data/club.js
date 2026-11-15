@@ -1,6 +1,14 @@
 // All of the club's site content lives in this file.
 // Edit here and every page (home, books, groups, resources) picks it up.
 
+// Used for link previews (WhatsApp, LinkedIn, X) and the sitemap.
+export const site = {
+  name: "The Technical Book Club",
+  url: "https://the-technical-book-club.vercel.app",
+  description:
+    "A community of developers reading and discussing essential software engineering books together.",
+};
+
 export const links = {
   joinForm: "https://forms.gle/9u41zzdHQpmXJhKF6",
 };
@@ -15,16 +23,19 @@ export const community = {
   icon: "👥",
 };
 
-// Books in reading order (oldest first).
+// Books in reading order (oldest first). Each book gets its own page at
+// /books/<slug>.
 //   status:   "finished" | "reading" | "planned"
 //   sessions: planned number of sessions for the book
 //   progress: percent of the book covered so far (0-100)
 //   group:    the book's WhatsApp study group, if it has one
 //   driveLink: Google Drive folder with the session slides, if any
+//   cover:    image in public/image/, e.g. "/image/my-book.png" (optional)
 export const books = [
   {
     slug: "the-pragmatic-programmer",
     title: "The Pragmatic Programmer",
+    author: "David Thomas & Andrew Hunt",
     icon: "🎓",
     status: "finished",
     sessions: 14,
@@ -39,6 +50,7 @@ export const books = [
   {
     slug: "the-art-of-clean-code",
     title: "The Art of Clean Code",
+    author: "Christian Mayer",
     icon: "🧹",
     status: "finished",
     sessions: 5,
@@ -53,6 +65,8 @@ export const books = [
   {
     slug: "alice-and-bob-learn-application-security",
     title: "Alice and Bob Learn Application Security",
+    author: "Tanya Janca",
+    cover: "/image/image-AliceandBob.png",
     icon: "🔒",
     status: "reading",
     sessions: 14,
@@ -80,6 +94,19 @@ export const books = [
 
 // The book featured in "Currently Reading" on the home page
 export const currentBookSlug = "automate-the-boring-stuff-with-python";
+
+// The next scheduled session. Set this and an "Next session" card with an
+// "Add to calendar" button appears on the home page; it hides itself once
+// the session has started. Leave it as null when nothing is scheduled.
+//
+// export const nextSession = {
+//   start: "2026-11-22T18:00:00Z",   // ISO date-time; Z = UTC
+//   durationMinutes: 90,
+//   book: "automate-the-boring-stuff-with-python",   // slug of a book above
+//   topic: "Chapter 3: Functions",                   // optional
+//   joinLink: "https://meet.google.com/...",         // optional
+// };
+export const nextSession = null;
 
 // Where the "Join Current Sessions" button on the home page goes.
 // NOTE: this is the Alice & Bob group, as on the site before. The current
