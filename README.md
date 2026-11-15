@@ -1,45 +1,52 @@
 # The Technical Book Club
 
-A community-driven platform for developers to read and discuss essential programming books together.
+A community of developers who read and discuss essential software engineering books together, one chapter per session.
 
-## 📚 About
+This repository holds the club's website: the reading roadmap, community groups, session recordings, and study materials.
 
-The Technical Book Club (TTBC) is a community where developers come together to:
+## Books
 
-## 🌟 Features
+| Book | Status |
+| --- | --- |
+| The Pragmatic Programmer | Finished (14 sessions + 1 special session) |
+| The Art of Clean Code | Finished (5 sessions) |
+| Alice and Bob Learn Application Security | Currently reading |
+| Automate the Boring Stuff with Python | Currently reading |
 
-- **Book Reading Timeline**: Track our journey through various technical books
+## How to join
 
-## 📱 Community Stats
+Fill in the [registration form](https://forms.gle/9u41zzdHQpmXJhKF6). You'll get an invite to the community WhatsApp group, where sessions are announced.
 
-## 🚀 Getting Started
+## Development
 
-First, run the development server:
+Requires Node.js 20 or newer.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build   # static export to ./out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Project layout
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+pages/           one file per route (index, books, groups, resources)
+components/      shared UI (Navbar, Counter, GroupCard)
+styles/          global CSS and Tailwind setup
+public/image/    photos and book covers
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Site content (books, sessions, testimonials, stats, group links) currently lives at the top of each page file in `pages/`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Adding a book cover
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Put the image in `public/image/` and set `coverImage` in `pages/index.js` to its path, e.g. `"/image/automate-python.png"`. While it's `null`, a styled placeholder is shown.
 
-## 📖 Current Book
+## Deployment
 
-## 🤝 How to Join
+The site is a static export (`output: 'export'` in `next.config.mjs`). Netlify builds it with `npm run build` and serves `./out`; see `netlify.toml`.
 
-## 📞 Contact
+## Built with
 
-## 📜 License
+[Next.js](https://nextjs.org) (Pages Router) and [Tailwind CSS](https://tailwindcss.com).

@@ -1,4 +1,3 @@
-// pages/roadmap.js
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
 import Counter from '../components/Counter';
@@ -16,7 +15,10 @@ export default function Home() {
     description: "Practical programming for total beginners",
     progress: "10%",
     author: "Al Sweigart",
-    coverImage: "/image/automate-python.png"  // Make sure to add this image to your public/image directory
+    // Add a cover to public/image/ and set its path here, e.g. "/image/automate-python.png".
+    // Until then a styled placeholder is shown instead of a broken image.
+    coverImage: null
+  };
 
   const specialSessions = [
     {
@@ -216,12 +218,22 @@ export default function Home() {
             <h2 className="text-2xl font-bold mb-8 text-center">📚 Currently Reading</h2>
             <div className="bg-white/5 rounded-lg p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-48 h-64 overflow-hidden rounded-lg border border-white/10">
-                  <img 
-                    src={currentBook.coverImage}
-                    alt={currentBook.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-48 h-64 overflow-hidden rounded-lg border border-white/10 shrink-0">
+                  {currentBook.coverImage ? (
+                    <img
+                      src={currentBook.coverImage}
+                      alt={currentBook.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col justify-between p-4 bg-gradient-to-br from-white/15 to-white/5">
+                      <span className="text-3xl">📘</span>
+                      <div>
+                        <div className="font-semibold leading-tight">{currentBook.title}</div>
+                        <div className="text-xs text-white/60 mt-2">{currentBook.author}</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-2xl mb-2">{currentBook.title}</h3>
