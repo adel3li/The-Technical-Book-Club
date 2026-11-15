@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Counter from '../components/Counter';
 import { benefits, links, currentSessionsLink, quote, specialSessions, testimonials } from '@/data/club';
@@ -6,17 +6,16 @@ import { currentBook, getBook, homeStats as stats } from '@/lib/club';
 
 export default function Home() {
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Navbar />
+    <Layout>
       <main>
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-float">The Technical Book Club</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6 animate-float">The Technical Book Club</h1>
             <p className="text-xl text-white/60 mb-8">
               Join a community of developers reading and discussing essential programming books together
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href={links.joinForm}>
                 <div className="inline-block bg-black text-white px-8 py-3 rounded-full font-semibold border border-white/20 hover:bg-white hover:text-black transition-all duration-200 glow-button">
                   📖 Join the Club
@@ -38,10 +37,11 @@ export default function Home() {
             {specialSessions.map((session, idx) => (
               <div key={idx} className="bg-black/50 rounded-lg p-8 border border-white/10">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="w-24 h-24 rounded-full bg-white/10 overflow-hidden">
+                  <div className="w-24 h-24 shrink-0 rounded-full bg-white/10 overflow-hidden">
                     <img 
                       src={session.photoUrl} 
                       alt={session.guest}
+                    loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -78,7 +78,7 @@ export default function Home() {
                   key={idx}
                   className="bg-white/5 p-6 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300"
                 >
-                  <p className="text-white/80 mb-4 text-sm">
+                  <p dir="auto" className="text-white/80 mb-4 text-sm whitespace-pre-line">
                     {testimonial.text}
                   </p>
                   <div className="border-t border-white/10 pt-4">
@@ -186,6 +186,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
+    </Layout>
   );
 }
