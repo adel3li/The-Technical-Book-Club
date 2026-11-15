@@ -1,49 +1,11 @@
 import Navbar from '../components/Navbar';
-import Link from 'next/link';
 import { GroupCard } from '../components/GroupCard';
+import { community } from '@/data/club';
+import { bookGroups as groups } from '@/lib/club';
 
 export default function Groups() {
-  const mainCommunity = {
-    title: "The Technical Book Club Community",
-    description: "Our main WhatsApp community where we share announcements, resources, and engage in general discussions about software engineering and learning.",
-    members: "+150",  // Added + prefix
-    platform: "WhatsApp",
-    link: "https://chat.whatsapp.com/KCSluMrzenhKJlziP351jA",
-    icon: "👥"
-  };
-
-  const bookGroups = [
-    {
-      title: "Alice and Bob Learn Application Security",
-      description: "Currently reading and discussing Application Security concepts",
-      members: "+55",  // Added + prefix
-      platform: "WhatsApp",
-      link: "https://chat.whatsapp.com/DIvv9XUSZ6QBYiRMPmLa49",
-      status: "Active",
-      progress: "70%",
-      icon: "📚"
-    },
-    {
-      title: "The Art of Clean Code",
-      description: "Discussions and implementation of clean code practices",
-      members: "+100",  // Added + prefix
-      platform: "WhatsApp",
-      link: "https://chat.whatsapp.com/DbSVlunS6ucLmt6LuXE5Ce",
-      status: "Completed",
-      progress: "100%",
-      icon: "🧹"
-    },
-    {
-      title: "The Pragmatic Programmer",  // Removed "Alumni"
-      description: "Continued discussions and implementation of pragmatic programming practices",
-      members: "+80",  // Added + prefix
-      platform: "WhatsApp",
-      link: "https://chat.whatsapp.com/Gi84p1zzgISCMojxSMZ8W5",
-      status: "Completed",
-      progress: "100%",
-      icon: "🎓"
-    }
-  ];
+  const mainCommunity = { ...community, members: `+${community.members}` };
+  const bookGroups = groups.map((group) => ({ ...group, members: `+${group.members}` }));
 
   return (
     <div className="bg-black text-white min-h-screen">

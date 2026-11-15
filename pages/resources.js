@@ -1,23 +1,8 @@
 import Navbar from '../components/Navbar';
+import { booksWithSlides } from '@/lib/club';
 
 export default function Resources() {
-  const books = [
-    {
-      title: "The Pragmatic Programmer",
-      icon: "📚",
-      driveLink: "https://drive.google.com/drive/folders/1lSLEjO53mC5fT3esXKTiAYcmTpoDKL7y?usp=sharing"
-    },
-    {
-      title: "The Art of Clean Code",
-      icon: "🧹",
-      driveLink: "https://drive.google.com/drive/folders/11wKA2PeJye36uCnQreb2PRTRvjDT4YUC?usp=share_link"
-    },
-    {
-      title: "Alice and Bob Learn Application Security",
-      icon: "🔒",
-      driveLink: "https://drive.google.com/drive/folders/1mMFHdJGTRjIPYi9t-UDHnhuXdX3-NF2n?usp=sharing"
-    }
-  ];
+  const books = booksWithSlides;
 
   return (
     <div className="bg-black text-white min-h-screen">

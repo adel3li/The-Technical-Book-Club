@@ -1,30 +1,14 @@
-// pages/books.js
 import Navbar from '../components/Navbar';
+import { books as allBooks } from '@/data/club';
+import { STATUS_LABELS, specialSessionCount } from '@/lib/club';
 
 export default function Books() {
-  const books = [
-    { 
-      title: "The Pragmatic Programmer", 
-      sessions: 14, 
-      status: "Finished",
-      specialSessions: 1
-    },
-    { 
-      title: "The Art of Clean Code", 
-      sessions: 5, 
-      status: "Finished"
-    },
-    { 
-      title: "Alice and Bob Learn Application Security", 
-      sessions: 14, 
-      status: "Currently Reading" 
-    },
-    { 
-      title: "Automate The Boring Stuff with Python.", 
-      sessions: 10, 
-      status: "Currently Reading" 
-    }
-  ];
+  const books = allBooks.map((book) => ({
+    title: book.title,
+    sessions: book.sessions,
+    status: STATUS_LABELS[book.status].timeline,
+    specialSessions: specialSessionCount(book.slug),
+  }));
 
   return (
     <div className="bg-black text-white min-h-screen">
@@ -56,9 +40,9 @@ export default function Books() {
                     {book.sessions && (
                       <div className="text-white/60">
                         {book.sessions}  sessions
-                        {book.specialSessions && (
+                        {book.specialSessions > 0 && (
                           <span className="text-white/40 ml-2">
-                            (+{book.specialSessions} special session)
+                            (+{book.specialSessions} special session{book.specialSessions > 1 ? "s" : ""})
                           </span>
                         )}
                       </div>
@@ -81,9 +65,9 @@ export default function Books() {
                     {book.sessions && (
                       <div className="text-white/60">
                         {book.sessions}  sessions
-                        {book.specialSessions && (
+                        {book.specialSessions > 0 && (
                           <span className="text-white/40 ml-2">
-                            (+{book.specialSessions} special session)
+                            (+{book.specialSessions} special session{book.specialSessions > 1 ? "s" : ""})
                           </span>
                         )}
                       </div>
