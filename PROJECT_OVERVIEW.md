@@ -162,7 +162,7 @@ There are no GitHub issues.
 **Cleanup**
 
 - Delete the merged branch `claude/pensive-fermi-hvjjmy` and the abandoned `gh-pages` branch.
-- Remove any extra Vercel/Netlify projects still connected to the repo (PR #1 found a Netlify site `ttechclub` and two Vercel projects).
+- Remove extra hosting projects still connected to the repo. Two Vercel projects still get every push: `the-technical-book-club` (the real one) and `the-technical-book` (a duplicate whose deploys show "Blocked"). PR #1 also found a Netlify site, `ttechclub`.
 - `.gitignore` still lists `.netlify`. This is harmless.
 
 **Possible next steps**
@@ -185,4 +185,5 @@ There are no GitHub issues.
 | Slides (Drive folders) | Per book, in `data/club.ts` (`slidesUrl`) |
 | Guest session recording | In `data/club.ts` (`guestSessions[].recordingUrl`) |
 | Designs | None found in the repo (no Figma or other design files are linked) |
-| Vercel project dashboard | Not recorded in the repo |
+| Vercel project (main) | https://vercel.com/adel3lis-projects/the-technical-book-club (builds and previews OK) |
+| Vercel project (duplicate) | https://vercel.com/adel3lis-projects/the-technical-book (also connected to the repo; its deploys show "Blocked"; candidate for removal) |
